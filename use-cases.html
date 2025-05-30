@@ -1,0 +1,647 @@
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>InterviewAI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-700">
+  <nav class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="/" class="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+              <polyline points="14 2 14 8 20 8" />
+              <path d="M8 13h2" />
+              <path d="M8 17h2" />
+              <path d="M14 13h2" />
+              <path d="M14 17h2" />
+            </svg>
+            <strong class="text-xl font-semibold text-gray-900 select-none">InterviewAI</strong>
+          </a>
+        </div>
+        <div class="flex items-center">
+          <button id="mobile-menu-button" aria-label="Toggle menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 md:hidden">
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <ul id="desktop-menu" class="hidden md:flex md:space-x-6 md:items-center md:text-base md:font-medium">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">About</a></li>
+
+            <li><a href="features.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">features</a></li>
+            <li><a href="benefits.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Benefits</a></li>
+            <li><a href="use-cases.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Use Cases</a></li>
+            <li><a href="faq.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md">Contact</a></li>
+          </ul>
+          <div class="hidden md:flex md:items-center md:space-x-2 md:ml-6">
+            <a href="signin.html" class="inline-block px-3 py-1.5 border border-blue-600 text-blue-600 rounded-md text-sm font-medium hover:bg-blue-50">Sign In</a>
+            <a href="signup.html" class="inline-block px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileFeaturesButton = document.getElementById('mobile-features-button');
+    const mobileFeaturesSubmenu = document.getElementById('mobile-features-submenu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.querySelectorAll('svg').forEach(svg => svg.classList.toggle('hidden'));
+    });
+
+    mobileFeaturesButton.addEventListener('click', () => {
+      const expanded = mobileFeaturesButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileFeaturesButton.setAttribute('aria-expanded', !expanded);
+      mobileFeaturesSubmenu.classList.toggle('hidden');
+    });
+  </script>
+  </nav>
+  <title>
+   Use Cases - AI Interview System
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+    font-family: "Inter", sans-serif;
+    background: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   }
+   .hero-section {
+    background: linear-gradient(to bottom, #e7f1ff, #ffffff);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+   }
+   a.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4a6bff;
+    text-decoration: none;
+   }
+   ul.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+   }
+   ul.nav-links li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+   }
+   ul.nav-links li a:hover,
+   ul.nav-links li a:focus {
+    color: #4a6bff;
+    outline: none;
+   }
+   .auth-buttons a {
+    margin-left: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+   }
+   .auth-buttons a.sign-in {
+    color: #4a6bff;
+    border: 1px solid #4a6bff;
+   }
+   .auth-buttons a.sign-in:hover,
+   .auth-buttons a.sign-in:focus {
+    background-color: #4a6bff;
+    color: white;
+    outline: none;
+   }
+   .auth-buttons a.sign-up {
+    background-color: #4a6bff;
+    color: white;
+   }
+   .auth-buttons a.sign-up:hover,
+   .auth-buttons a.sign-up:focus {
+    background-color: #3b56d1;
+    outline: none;
+   }
+   .card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+   }
+   .card:hover,
+   .card:focus-within {
+    box-shadow: 0 4px 12px rgba(74, 107, 255, 0.3);
+    outline: none;
+   }
+   .card-header {
+    padding: 1.5rem;
+   }
+   .card-content {
+    padding: 0 1.5rem;
+    flex-grow: 1;
+   }
+   .card-footer {
+    padding: 1.5rem;
+   }
+   .badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #dbeafe;
+    color: #1e40af;
+   }
+   .icon-circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: #dbeafe;
+    color: #2563eb;
+   }
+   .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+   }
+   .feature-list li span:first-child {
+    color: #2563eb;
+    font-weight: 700;
+    line-height: 1;
+   }
+   main[role="main"] {
+    background-color: #ffffff;
+    flex-grow: 1;
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+   }
+   /* Override text colors inside main to black */
+   main[role="main"] h2,
+   main[role="main"] h3,
+   main[role="main"] p,
+   main[role="main"] span.badge,
+   main[role="main"] .card-header p,
+   main[role="main"] .card-content p {
+    color: #000000 !important;
+   }
+   /* Also override dark mode text colors inside main */
+   @media (prefers-color-scheme: dark) {
+    main[role="main"] h2,
+    main[role="main"] h3,
+    main[role="main"] p,
+    main[role="main"] span.badge,
+    main[role="main"] .card-header p,
+    main[role="main"] .card-content p {
+     color: #000000 !important;
+    }
+   }
+   /* Remove dark mode background from main */
+   @media (prefers-color-scheme: dark) {
+    main[role="main"] {
+     background-color: #ffffff !important;
+    }
+   }
+  </style>
+ </head>
+ <body>
+  <section aria-label="Page introduction" class="hero-section">
+   <div class="container mx-auto max-w-4xl text-center px-4 sm:px-6 lg:px-8">
+    <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-black">
+     Use Cases
+    </h1>
+    <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">
+     Discover how different users leverage our AI-powered interview system to
+     achieve their goals.
+    </p>
+   </div>
+  </section>
+  <main class="container mx-auto px-4 md:px-6" role="main">
+   <section aria-label="Use case categories" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
+    <article aria-labelledby="jobseekers-title" class="card focus:outline-none focus:ring-2 focus:ring-blue-500" tabindex="0">
+     <div class="card-header">
+      <div aria-hidden="true" class="icon-circle" title="Briefcase icon representing job seekers">
+       <i class="h-6 w-6" data-lucide="briefcase">
+       </i>
+      </div>
+      <h2 class="text-xl font-bold mb-2" id="jobseekers-title">
+       Job Seekers
+      </h2>
+      <p>
+       Prepare for interviews and improve your chances of landing your dream
+       job
+      </p>
+     </div>
+     <div class="card-content">
+      <p class="mb-4">
+       Job seekers use our system to practice answering interview questions
+       specific to their target roles, receive feedback on their responses,
+       and build confidence before real interviews.
+      </p>
+      <div class="space-y-2">
+       <span class="badge">
+        Entry-level professionals
+       </span>
+       <span class="badge">
+        Career changers
+       </span>
+       <span class="badge">
+        Senior executives
+       </span>
+      </div>
+     </div>
+     <div class="card-footer">
+      <a class="w-full" href="features.html" tabindex="0">
+       <button aria-label="Learn more about Job Seekers use case" class="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-200 rounded-md bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Learn More
+        <i class="h-4 w-4" data-lucide="arrow-right">
+        </i>
+       </button>
+      </a>
+     </div>
+    </article>
+    <article aria-labelledby="hr-title" class="card focus:outline-none focus:ring-2 focus:ring-blue-500" tabindex="0">
+     <div class="card-header">
+      <div aria-hidden="true" class="icon-circle" title="User plus icon representing HR professionals">
+       <i class="h-6 w-6" data-lucide="user-plus">
+       </i>
+      </div>
+      <h2 class="text-xl font-bold mb-2" id="hr-title">
+       HR Professionals
+      </h2>
+      <p>
+       Streamline recruitment processes and make better hiring decisions
+      </p>
+     </div>
+     <div class="card-content">
+      <p class="mb-4">
+       HR teams use our platform to generate comprehensive interview question
+       sets, standardize their interview process, and collaborate with hiring
+       managers to ensure consistent candidate evaluation.
+      </p>
+      <div class="space-y-2">
+       <span class="badge">
+        Recruiters
+       </span>
+       <span class="badge">
+        Hiring managers
+       </span>
+       <span class="badge">
+        Talent acquisition teams
+       </span>
+      </div>
+     </div>
+     <div class="card-footer">
+      <a class="w-full" href="features.html" tabindex="0">
+       <button aria-label="Learn more about HR Professionals use case" class="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-200 rounded-md bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Learn More
+        <i class="h-4 w-4" data-lucide="arrow-right">
+        </i>
+       </button>
+      </a>
+     </div>
+    </article>
+    <article aria-labelledby="edu-title" class="card focus:outline-none focus:ring-2 focus:ring-blue-500" tabindex="0">
+     <div class="card-header">
+      <div aria-hidden="true" class="icon-circle" title="Graduation cap icon representing educational institutions">
+       <i class="h-6 w-6" data-lucide="graduation-cap">
+       </i>
+      </div>
+      <h2 class="text-xl font-bold mb-2" id="edu-title">
+       Educational Institutions
+      </h2>
+      <p>
+       Prepare students for successful job searches and career development
+      </p>
+     </div>
+     <div class="card-content">
+      <p class="mb-4">
+       Universities and career centers use our system to help students
+       practice interview skills, prepare for job fairs, and increase
+       placement rates for graduates entering the workforce.
+      </p>
+      <div class="space-y-2">
+       <span class="badge">
+        Career centers
+       </span>
+       <span class="badge">
+        Business schools
+       </span>
+       <span class="badge">
+        Student organizations
+       </span>
+      </div>
+     </div>
+     <div class="card-footer">
+      <a class="w-full" href="features.html" tabindex="0">
+       <button aria-label="Learn more about Educational Institutions use case" class="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-200 rounded-md bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Learn More
+        <i class="h-4 w-4" data-lucide="arrow-right">
+        </i>
+       </button>
+      </a>
+     </div>
+    </article>
+   </section>
+   <section aria-label="Featured use cases" class="mb-16">
+    <h2 class="text-3xl font-bold tracking-tighter text-center mb-8">
+     Featured Use Cases
+    </h2>
+    <div class="space-y-12">
+     <article aria-labelledby="featured-1-title" class="grid gap-8 md:grid-cols-2 items-center" tabindex="0">
+      <div>
+       <span aria-label="Category: Job Seeker Success Story" class="badge mb-4">
+        Job Seeker Success Story
+       </span>
+       <h3 class="text-2xl font-bold mb-4" id="featured-1-title">
+        Tech Professional Career Transition
+       </h3>
+       <p class="mb-4">
+        Sarah, a software developer with 5 years of experience, was looking to
+        transition from a backend role to a full-stack position. She used our
+        system to:
+       </p>
+       <ul aria-label="Key actions Sarah took" class="feature-list mb-4">
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Generate questions specific to full-stack development roles
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Practice answering technical questions about frontend technologies
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Receive feedback on areas where her knowledge needed strengthening
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Build confidence in discussing her transferable skills
+         </span>
+        </li>
+       </ul>
+       <p class="mb-4">
+        After two weeks of focused practice, Sarah successfully interviewed for
+        and received offers from three companies for full-stack roles, with a
+        20% salary increase.
+       </p>
+      </div>
+      <div>
+       <img alt="Tech professional sitting at a desk using a laptop with AI interview system interface visible on screen in a modern office environment" class="rounded-lg object-cover w-full h-auto" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4a7de56a-6be8-4def-d1ee-935c2c6eb69f.jpg" width="600"/>
+      </div>
+     </article>
+     <article aria-labelledby="featured-2-title" class="grid gap-8 md:grid-cols-2 items-center" tabindex="0">
+      <div class="order-2 md:order-1">
+       <img alt="HR team collaborating around a table with laptops and a large screen showing AI interview system dashboard in a bright office" class="rounded-lg object-cover w-full h-auto" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e3212ac1-f407-4531-259e-399413b8b5a2.jpg" width="600"/>
+      </div>
+      <div class="order-1 md:order-2">
+       <span aria-label="Category: HR Team Implementation" class="badge mb-4">
+        HR Team Implementation
+       </span>
+       <h3 class="text-2xl font-bold mb-4" id="featured-2-title">
+        Scaling Recruitment at a Growing Startup
+       </h3>
+       <p class="mb-4">
+        TechGrowth, a startup that needed to hire 30 new employees in 3 months,
+        implemented our system to:
+       </p>
+       <ul aria-label="Key actions TechGrowth took" class="feature-list mb-4">
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Create standardized question sets for different roles
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Train new interviewers quickly with sample questions and answers
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Ensure consistent evaluation criteria across all interviewers
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Reduce time spent on interview preparation by 60%
+         </span>
+        </li>
+       </ul>
+       <p class="mb-4">
+        The result: TechGrowth successfully hired all 30 positions within their
+        timeline, maintained high quality standards, and reduced their average
+        time-to-hire by 35%.
+       </p>
+      </div>
+     </article>
+     <article aria-labelledby="featured-3-title" class="grid gap-8 md:grid-cols-2 items-center" tabindex="0">
+      <div>
+       <span aria-label="Category: Educational Implementation" class="badge mb-4">
+        Educational Implementation
+       </span>
+       <h3 class="text-2xl font-bold mb-4" id="featured-3-title">
+        University Career Center Enhancement
+       </h3>
+       <p class="mb-4">
+        State University implemented our system in their career center to:
+       </p>
+       <ul aria-label="Key actions State University took" class="feature-list mb-4">
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Provide 24/7 interview practice resources for students
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Scale their career counseling services without adding staff
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Prepare students for industry-specific interviews
+         </span>
+        </li>
+        <li>
+         <span aria-hidden="true">
+          •
+         </span>
+         <span>
+          Track student progress and identify common areas for improvement
+         </span>
+        </li>
+       </ul>
+       <p class="mb-4">
+        After implementing the system, the university saw a 25% increase in job
+        placement rates and received positive feedback from both students and
+        employers about interview preparedness.
+       </p>
+      </div>
+      <div>
+       <img alt="University career center with students using computers and career advisors assisting them in a bright modern space" class="rounded-lg object-cover w-full h-auto" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f0aa4f34-0d46-4fce-ead8-7db08c52927f.jpg" width="600"/>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section aria-label="Call to action" class="text-center">
+    <h2 class="text-3xl font-bold tracking-tighter mb-4">
+     Find Your Use Case
+    </h2>
+    <p class="max-w-2xl mx-auto mb-6">
+     Our flexible platform can be adapted to various interview preparation and
+     recruitment needs. Contact us to discuss your specific requirements.
+    </p>
+    <div aria-label="Call to action buttons" class="flex flex-col sm:flex-row gap-4 justify-center" role="group">
+     <a aria-label="Contact Us" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md bg-blue-600 text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" href="contact.html" tabindex="0">
+      Contact Us
+      <i class="h-4 w-4" data-lucide="arrow-right">
+      </i>
+     </a>
+    </div>
+   </section>
+  </main>
+  <script>
+   lucide.createIcons();
+  </script>
+    <div class="text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Interviews?</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+                Start generating customized interview questions today and take your interview preparation to the next level.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="features.html" class="px-8 py-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center gap-2 justify-center">
+                    Try Question Generator <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+<title>Footer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+<body class="bg-white">
+  <footer class="w-full border-t border-gray-200 mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center space-x-2 mb-3">
+          <i class="fas fa-file-alt text-blue-600 text-lg"></i>
+          <span class="font-semibold text-black text-base">InterviewAI</span>
+        </div>
+        <p class="text-gray-600 text-sm max-w-xs">
+          Transform your interview process with AI-powered question generation.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">PRODUCT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="features.html">Job Description Analysis</a></li>
+            <li><a href="features.html">Question Generator</a></li>
+            <li><a href="features.html">Voice Answering</a></li>
+            
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">COMPANY</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+         <li><a href="about.html">About</a></li>
+          <li><a href="benefits.html">Benefits</a></li>
+          <li><a href="use-cases.html">Use Cases</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-black text-sm mb-3">CONNECT</h3>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 pb-6 text-center text-gray-500 text-xs select-none">
+      © 2025 InterviewAI. All rights reserved.
+    </div>
+  </footer>
+  </body>
+</html>
+
